@@ -1,7 +1,7 @@
 import urllib.request
 import json
 
-BASE_URL = "http://localhost:9999/api/v1"
+BASE_URL = "https://service-sgpp.fly.dev/api/v1"
 
 # 1. Login
 data = b"username=admin&password=admin123"
