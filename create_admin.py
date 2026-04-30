@@ -41,7 +41,7 @@ def init_db():
     if not admin_user:
         new_admin = User(
             username="admin",
-            password_hash=get_password_hash("admin123"),
+            password_hash=get_password_hash("MiClaveSegura2024"),
             rol="ADMIN",
             nombre_completo="Administrador del Sistema",
             departamento="Sistemas Central"
