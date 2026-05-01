@@ -7,11 +7,13 @@ from app.models.user import User
 from app.models.complexity import ComplexityCoefficient
 from app.core.security import get_password_hash
 from app.core.database import Base
+from app.models.case import Case
 
 def init_db():
     print("Creando tablas en PostgreSQL si no existen...")
+    print("DATABASE URL:", settings.SQLALCHEMY_DATABASE_URI)
     Base.metadata.create_all(bind=engine)
-    
+    print("Tablas creadas correctamente")
     db: Session = SessionLocal()
     
     # 1. Crear Coeficientes de Complejidad base si no existen
