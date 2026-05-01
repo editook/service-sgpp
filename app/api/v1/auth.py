@@ -17,10 +17,10 @@ def login_access_token(
     db: Annotated[Session, Depends(get_db)],
     form_data: Annotated[OAuth2PasswordRequestForm, Depends()]
 ) -> Token:
-    print("=== LOGIN DEBUG ===")
+    print("LOGIN")
     print("USERNAME:", form_data.username)
     print("PASSWORD RAW:", repr(form_data.password)) 
-    """Verifica credenciales y retorna un token JWT"""
+    
     user = db.query(User).filter(User.username == form_data.username).first()
     if not user or not verify_password(form_data.password, user.password_hash):
         raise HTTPException(

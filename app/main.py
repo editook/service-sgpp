@@ -1,19 +1,13 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
-from app.create_admin import init_db
 from app.api.v1.api_router import api_router
 from app.core.scheduler import start_scheduler
 from contextlib import asynccontextmanager
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    try:
-        #init_db()
-        print("DB inicializada")
-    except Exception as e:
-        print("ERROR DB:", e)
-
+    print("MAIN")
     yield
 
 app = FastAPI(

@@ -7,7 +7,7 @@ class Settings(BaseSettings):
     API_V1_STR: str = "/api/v1"
     
     # DATABASE (Modificado a SQLite para facilidad de demostración del usuario)
-    SQLALCHEMY_DATABASE_URI: str = "sqlite:///./sgpp_test1.db"
+    SQLALCHEMY_DATABASE_URI: str = "sqlite:///./sgpp_test2.db"
 
     # JWT Authentication
     SECRET_KEY: str = "0bb2681a7697468ba0d65c6e98c181a7secretkey"
