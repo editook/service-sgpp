@@ -9,7 +9,7 @@ from contextlib import asynccontextmanager
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     try:
-        init_db()
+        #init_db()
         print("DB inicializada")
     except Exception as e:
         print("ERROR DB:", e)

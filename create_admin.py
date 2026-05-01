@@ -12,7 +12,7 @@ from app.core.security import get_password_hash
 from app.core.database import Base
 
 def init_db():
-    print("Creando tablas en PostgreSQL si no existen...")
+    print("Creando tablas en PostgreSQL si no existen 2...")
     Base.metadata.create_all(bind=engine)
     
     db: Session = SessionLocal()
@@ -25,7 +25,7 @@ def init_db():
         {"nivel": "Muy Alta", "valor_multiplicador": 3.0}
     ]
     
-    print("Inyectando Coeficientes de Complejidad...")
+    print("Inyectando Coeficientes de Complejidad 2...")
     for coef in coeficientes:
         existing = db.query(ComplexityCoefficient).filter(ComplexityCoefficient.nivel == coef["nivel"]).first()
         if not existing:
@@ -36,7 +36,7 @@ def init_db():
             db.add(new_coef)
             
     # 2. Crear usuario ADMIN por defecto
-    print("Verificando existencia del usuario administrador...")
+    print("Verificando existencia del usuario administrador 2...")
     admin_user = db.query(User).filter(User.username == "admin").first()
     if not admin_user:
         new_admin = User(
@@ -47,13 +47,13 @@ def init_db():
             departamento="Sistemas Central"
         )
         db.add(new_admin)
-        print("Usuario 'admin' creado exitosamente con contraseña 'admin123'")
+        print("Usuario 'admin' creado exitosamente con contraseña 'admin123' 2")
     else:
-        print("Usuario 'admin' ya existe en PostgreSQL.")
+        print("Usuario 'admin' ya existe en PostgreSQL. 2")
         
     db.commit()
     db.close()
-    print("Poblado de Base de Datos completado!")
+    print("Poblado de Base de Datos completado! 2")
 
 if __name__ == "__main__":
     init_db()
