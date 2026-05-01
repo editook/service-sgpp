@@ -63,7 +63,7 @@ def get_dashboard_statistics(
     # 4. Timeline
     # Extraemos el mes y año en SQLite
     timeline_query = base_query.with_entities(
-        func.strftime('%Y-%m', Case.fecha_ingreso).label('mes'),
+        func.to_char(Case.fecha_ingreso, 'YYYY-MM').label('mes'),
         func.count(Case.id).label('total')
     ).group_by('mes').order_by('mes').all()
     
