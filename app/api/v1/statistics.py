@@ -31,10 +31,14 @@ def get_dashboard_statistics(
     cerrados = base_query.filter(Case.estado == "Cerrado").count()
     
     # Retraso (simplificado: fecha_ingreso + plazo_dias < current_date y estado == Activo)
-    retrasos_query = base_query.filter(Case.estado == "Activo").filter(
-        text("date(fecha_ingreso, '+' || plazo_dias || ' days') < date('now')")
+    #retrasos_query = base_query.filter(Case.estado == "Activo").filter(
+    #    text("date(fecha_ingreso, '+' || plazo_dias || ' days') < date('now')")
+    #).count()
+    retrasos_query = base_query.filter(
+    Case.estado == "Activo"
+    ).filter(
+        text("fecha_ingreso + (plazo_dias * INTERVAL '1 day') < CURRENT_DATE")
     ).count()
-    
     kpis = KPIData(
         total=total_casos,
         activos=activos,
