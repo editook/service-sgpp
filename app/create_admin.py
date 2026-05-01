@@ -8,7 +8,7 @@ from app.models.complexity import ComplexityCoefficient
 from app.core.security import get_password_hash
 from app.core.database import Base
 from app.models.case import Case
-
+from app.core.config import settings
 def init_db():
     print("Creando tablas en PostgreSQL si no existen...")
     print("DATABASE URL:", settings.SQLALCHEMY_DATABASE_URI)
