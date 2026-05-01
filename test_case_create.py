@@ -4,10 +4,10 @@ import json
 BASE_URL = "https://service-sgpp.fly.dev/api/v1"
 
 # 1. Login
-data = b"username=admin&password=MiClaveSegura2024"
+data = b"username=admin&password=admin123"
 req = urllib.request.Request(f"{BASE_URL}/auth/login", data=data)
 req.add_header("Content-Type", "application/x-www-form-urlencoded")
-
+print("EJECUTANDO PRUEBAS")
 try:
     with urllib.request.urlopen(req) as f:
         response = json.loads(f.read().decode('utf-8'))

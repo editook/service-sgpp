@@ -38,13 +38,13 @@ def init_db():
     if not admin_user:
         new_admin = User(
             username="admin",
-            password_hash=get_password_hash("MiClaveSegura2024"),
+            password_hash=get_password_hash("admin123"),
             rol="ADMIN",
             nombre_completo="Administrador del Sistema",
             departamento="Sistemas Central"
         )
         db.add(new_admin)
-        print("Usuario 'admin' creado exitosamente con contraseña 'admin123'")
+        print("Usuario 'admin' creado exitosamente con contraseña")
     else:
         print("Usuario 'admin' ya existe en PostgreSQL.")
         
