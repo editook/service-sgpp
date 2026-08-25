@@ -6,7 +6,8 @@ class Settings(BaseSettings):
     VERSION: str = "2.0.0"
     API_V1_STR: str = "/api/v1"
     
-    DATABASE_URL: str = ""
+    #DATABASE_URL: str = "" cambiar para produccion
+    DATABASE_URL: str = "postgresql://postgres:123@localhost:5432/gestion_pericial"
     # JWT Authentication
     SECRET_KEY: str = "0bb2681a7697468ba0d65c6e98c181a7secretkey"
     ALGORITHM: str = "HS256"
