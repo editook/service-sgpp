@@ -4,6 +4,7 @@ from app.core.config import settings
 
 db_uri = settings.SQLALCHEMY_DATABASE_URI
 connect_args = {}
+
 if db_uri.startswith("sqlite"):
     connect_args = {"check_same_thread": False}
 

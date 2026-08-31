@@ -23,4 +23,9 @@ start "Backend SGPP" cmd /k "cd service-sgpp \&\& .\\venv\\Scripts\\activate \&\
 
 
 
+#configuracion segun entorno postgres|sqlite
+DATABASE_URL: str = "postgresql://postgres:123@localhost:5432/gestion_pericial"
+DATABASE_URL: str = os.getenv("DATABASE_URL", "sqlite:///./sgpp_test.db")
 
+url = self.DATABASE_URL or os.getenv("DATABASE_URL", "sqlite:///./sgpp_test.db")
+url = self.DATABASE_URL or os.getenv("DATABASE_URL", "")
