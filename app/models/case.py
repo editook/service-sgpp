@@ -7,7 +7,7 @@ class Case(Base):
     __tablename__ = "casos"
 
     id = Column(Integer, primary_key=True, index=True)
-    codigo_unico = Column(String(50), unique=True, index=True, nullable=False)
+    codigo_unico = Column(String(50), index=True, nullable=False)
     nombre_evaluado = Column(String(150), nullable=False)
     tipo_delito = Column(String(100), nullable=False)
     coeficiente_id = Column(Integer, ForeignKey("coeficientes_complejidad.id"), nullable=False)

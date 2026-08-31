@@ -38,6 +38,32 @@ class CaseBase(BaseModel):
 class CaseCreate(CaseBase):
     pass
 
+class CaseUpdate(BaseModel):
+    codigo_unico: str | None = None
+    nombre_evaluado: str | None = None
+    tipo_delito: str | None = None
+    coeficiente_id: int | None = None
+    perito_id: int | None = None
+    departamento: str | None = None
+    fecha_ingreso: date | None = None
+    plazo_dias: int | None = None
+    fecha_requerimiento: date | None = None
+    tipo_requerimiento: str | None = None
+    estado_proceso: str | None = None
+    estado_proceso_detalle: str | None = None
+    estado_pericia: str | None = None
+    estado_pericia_fecha_programada: date | None = None
+    estado_pericia_detalle_representacion: str | None = None
+    estado_pericia_fecha_evaluacion: date | None = None
+    estado_pericia_tiempo_entrega: str | None = None
+    estado_pericia_fecha_entrega: date | None = None
+    sujeto_procesal: str | None = None
+    sujeto_procesal_detalle: str | None = None
+    tipo_delito_detalle: str | None = None
+    sexo: str | None = None
+    edad: int | None = None
+    tiene_consultor_tecnico: bool | None = None
+
 class CaseResponse(CaseBase):
     id: int
     fecha_vencimiento: date | None = None
